@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>States</title>
+</head>
+
+<body>
+    <select name="" id="filter">
+        <option value="">Select</option>
+        <option value="Shirt">Shirt</option>
+        <option value="Pants">Pants</option>
+        <option value="Sharee">Sharee</option>
+    </select>
+    <div id="container"></div>
+</body>
+<script>
+    const filter = document.getElementById("filter");
+    // UI's State
+    const Names = [
+        {
+            name: "Product-1",
+            category: "Shirt"
+        },
+        {
+            name: "Product-2",
+            category: "Pants"
+        },
+        {
+            name: "Product-3",
+            category: "Sharee"
+        }
+    ]
+
+    filter.addEventListener("change", () => {
+        const filtered = Names.filter((element) => {
+            return element.category === filter.value;
+        })
+        Display(filtered);
+    })
+    Display(Names);
+    function Display(data = []) {
+        document.getElementById("container").innerHTML = null;
+        data.forEach((element) => {
+            const card = document.createElement("div");
+            const h1 = document.createElement("h1");
+            const p = document.createElement("p");
+            h1.innerText = element.name;
+            p.innerText = element.category;
+            card.append(h1, p);
+            document.getElementById("container").append(card);
+        })
+    }
+
+    // function sum() {
+    //     const a = 10;
+    // }
+    // sum();
+    // sum();
+</script>
+
+</html>

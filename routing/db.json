@@ -1,0 +1,11 @@
+{
+  "todos": [
+    {
+      "name": "assignment",
+      "description": "Assignment is easy",
+      "deadline": "2023-06-11",
+      "isCompleted": false,
+      "id": 1
+    }
+  ]
+}
